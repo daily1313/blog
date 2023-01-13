@@ -21,6 +21,14 @@ public class UserService {
     private BCryptPasswordEncoder encoder;
 
     @Transactional(readOnly = true)
+    public User findById(Long id) {
+        User user = userRepository.findById(id).orElseThrow(() -> {
+            return new IllegalArgumentException("회원 찾기 실패");
+        });
+        return user;
+    }
+
+    @Transactional(readOnly = true)
     public User findUser(String username) {
         User user = userRepository.findByUsername(username).orElseGet(()->{
             return new User();
@@ -39,7 +47,7 @@ public class UserService {
     }
 
     @Transactional
-    public void findUser(User user) {
+    public void updateUser(User user) {
         // 수정시에는 영속성 컨텍스트 User 오브젝트를 영속화시키고, 영속화된 User 오브젝트를 수정
         // select를 해서 User오브젝트를 DB로 부터 가져오는 이유는 영속화를 하기 위해서!!
         // 영속화된 오브젝트를 변경하면 자동으로 DB에 update문을 날려주거든요.

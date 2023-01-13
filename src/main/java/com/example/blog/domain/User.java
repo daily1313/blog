@@ -21,11 +21,13 @@ import org.springframework.format.annotation.DateTimeFormat;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-@Entity
+@Entity // User 클래스가 MySQL에 테이블이 생성이 된다.
+// ORM -> Java(다른 언어) Object -> 테이블로 매핑해주는 기술
 public class User {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer Id;
+
+    @Id // Primary Key
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // 프로젝트에서 연결된 DB의 넘버링 전략을 따라간다.
+    private Long id;
 
     @Column(nullable = false, length = 30, unique = true)
     private String username;
@@ -43,6 +45,8 @@ public class User {
 
     private String oauth; // kakao, google
 
+
+    // 날짜 및 시간이 자동적으로 입력
     @DateTimeFormat(pattern = "yyyy-mm-dd")
     private LocalDate createDate; // 날짜
 

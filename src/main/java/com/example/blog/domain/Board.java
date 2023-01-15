@@ -1,6 +1,7 @@
 package com.example.blog.domain;
 
 import java.time.LocalDate;
+import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -10,6 +11,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.PrePersist;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -41,9 +43,12 @@ public class Board {
     @ColumnDefault("0")
     private int count; // 조회수
 
-    @ManyToOne(fetch = FetchType.EAGER) // Many = Board, User = One, 한 명의 유저는 여러 개의 게시글을 쓸 수 있다.
+    @ManyToOne(fetch = FetchType.EAGER) // 유저정보는 가져올게 하나밖에 없으므로 EAGER (조인해서 바로 가져옴), Many = Board, User = One, 한 명의 유저는 여러 개의 게시글을 쓸 수 있다.
     @JoinColumn(name="userId")
     private User user; // DB는 오브젝트를 저장할 수 없다. Fk, 자바는 오브젝트를 저장할 수 있다.
+
+    @OneToMany(mappedBy = "board", fetch = FetchType.EAGER) // 답글은 여러개 가져올 수 있으므로 LAZY 전략(필요할 경우에만 가져옴), mappedBy : 연관관계의 주인이 아니다. (난 FK가 아니에요) DB에 칼럼을 만들지 마세요.
+    private List<Reply> reply;
 
     // 날짜 및 시간이 자동적으로 입력
     @DateTimeFormat(pattern = "yyyy-mm-dd")

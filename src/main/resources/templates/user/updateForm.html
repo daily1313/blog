@@ -14,13 +14,6 @@
     <input type="hidden" id="id" th:value="${user.id}">
 
 
-    <div th:if="${user.oauth != null}">
-      <div class="form-group">
-        <label for="username">username</label>
-        <input type="text" th:value="${user.getUsername()}" class="form-control" placeholder="Enter username" id="username" readonly>
-      </div>
-    </div>
-
     <div th:unless="${user.oauth != null}">
       <div class="form-group">
         <label for="username">username</label>

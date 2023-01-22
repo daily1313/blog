@@ -11,6 +11,7 @@ public class KakaoProfile {
     public Properties properties;
     public KakaoAccount kakao_account;
 
+
     @Data
     @JsonIgnoreProperties(ignoreUnknown=true)
     public class Properties {
@@ -29,7 +30,6 @@ public class KakaoProfile {
         public Boolean is_email_valid;
         public Boolean is_email_verified;
         public String email;
-
 
         @Data
         @JsonIgnoreProperties(ignoreUnknown=true)

@@ -26,7 +26,7 @@ public class Reply {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
 
     @Column(nullable = false, length = 200)
     private String content;
@@ -48,5 +48,11 @@ public class Reply {
     @PrePersist // DB에 INSERT 되기 직전에 실행. 즉 DB에 값을 넣으면 자동으로 실행됨
     public void createDate() {
         this.createDate = LocalDate.now();
+    }
+
+    @Override
+    public String toString() {
+        return "Reply [id=" + id + ", content=" + content + ", board=" + board + ", user=" + user + ", createDate="
+                + createDate + "]";
     }
 }

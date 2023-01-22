@@ -4,6 +4,7 @@ import com.example.blog.config.auth.PrincipalDetail;
 import com.example.blog.domain.KakaoProfile;
 import com.example.blog.domain.OAuthToken;
 import com.example.blog.domain.User;
+import com.example.blog.service.BoardService;
 import com.example.blog.service.UserService;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -59,6 +60,8 @@ public class UserController {
         @Autowired
         private UserService userService;
 
+        @Autowired
+        private BoardService boardService;
 
         @GetMapping("/auth/joinForm")
         public String joinForm() {
@@ -188,6 +191,14 @@ public class UserController {
         public String updateForm(Model model, @AuthenticationPrincipal PrincipalDetail principalDetail) {
             model.addAttribute("user", principalDetail.getUser());
             return "/user/updateForm";
+        }
+
+        // 작성 글 보기
+        @GetMapping("/user/myBoard")
+        public String index(Model model, @AuthenticationPrincipal PrincipalDetail principalDetail) {
+            model.addAttribute("user", principalDetail.getUser());
+            model.addAttribute("boards", boardService.작성글목록(principalDetail.getUser()));
+            return "/user/myBoard";
         }
 }
 

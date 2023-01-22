@@ -3,6 +3,7 @@ package com.example.blog.service;
 import com.example.blog.domain.Role;
 import com.example.blog.domain.User;
 import com.example.blog.repository.UserRepository;
+import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -28,6 +29,7 @@ public class UserService {
         return user;
     }
 
+
     @Transactional(readOnly = true)
     public User findUser(String username) {
         User user = userRepository.findByUsername(username).orElseGet(()->{
@@ -45,6 +47,8 @@ public class UserService {
         userRepository.save(user);
 
     }
+
+
 
     @Transactional
     public void updateUser(User user) {

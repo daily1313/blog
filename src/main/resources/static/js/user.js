@@ -39,6 +39,8 @@ let index = {
             alert(JSON.stringify(error));
         });
 
+        // console.log(data); // 자바 오브젝트
+        // console.log(JSON.stringify(data)); // Json 문자열
     },
 
     update: function(){

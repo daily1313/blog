@@ -24,6 +24,7 @@
 - 기본적인 회원가입(Spring Security), 로그인(OAuth 카카오 로그인), CRUD(게시글, 댓글, 회원), 관리자 기능 구현
   - 회원가입 시 요청에 대한 응답을 html이 아닌, Json으로 받기 위해 Ajax 사용
   - 비동기 통신(비절차적 로직, 작업 순서에 대해 구애 받지 않음)을 하기 위함
+- 게시글 조회에서 Pagination 적용 
 - 도메인 설계에서 무한 참조 문제를 해결하기 위해 @JsonIgnoreProperties 어노테이션 적용
 - 카카오 소셜로그인 Rest API 구현(참조 : https://developers.kakao.com/docs/latest/ko/kakaologin/rest-api) 
 - 클라이언트(프론트)에게 편의를 제공하기 위해 API 명세서 작성(링크 : )

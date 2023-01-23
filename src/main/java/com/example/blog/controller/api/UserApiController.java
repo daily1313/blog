@@ -3,15 +3,13 @@ package com.example.blog.controller.api;
 import com.example.blog.domain.User;
 import com.example.blog.dto.ResponseDto;
 import com.example.blog.service.UserService;
-import java.util.Optional;
-import javax.servlet.http.HttpSession;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -33,6 +31,7 @@ public class UserApiController {
     // Json 데이터를 받으려면 @RequestBody로 받아야함
     // 회원가입
 
+    @ApiOperation(value = "회원가입", notes = "회원가입이 완료되었습니다.")
     @PostMapping("/auth/joinProc")
     public ResponseDto<Integer> save(@RequestBody User user) {
         System.out.println("UserApiController : save 호출됨");
@@ -53,7 +52,7 @@ public class UserApiController {
 //        return new ResponseDto<Integer>(HttpStatus.OK.value(), 1);
 //    }
 
-
+    @ApiOperation(value = "회원정보 수정", notes = "회원정보가 수정되었습니다.")
     @PutMapping("/user")
     public ResponseDto<Integer> update(@RequestBody User user) {
 

@@ -8,6 +8,8 @@ import com.example.blog.service.BoardService;
 import com.example.blog.service.UserService;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
@@ -21,14 +23,7 @@ import org.springframework.web.client.RestTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.http.HttpEntity;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpMethod;
-import org.springframework.http.ResponseEntity;
+
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -36,10 +31,7 @@ import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.util.LinkedMultiValueMap;
-import org.springframework.util.MultiValueMap;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.client.RestTemplate;
+
 
 
 // 인증이 안된 사용자들이 출입할 수 있는 경로
@@ -76,6 +68,7 @@ public class UserController {
 
 
         // 카카오
+        @ApiOperation(value = "카카로 로그인", notes = "카카오 로그인에 성공하였습니다.")
         @GetMapping("/auth/kakao/callback")
         public String kakaoCallback(String code) {
             // @ResponseBody는 Data를 리턴해주는 컨트롤러 함수가 됨
@@ -186,7 +179,7 @@ public class UserController {
             return "redirect:/";
         }
 
-
+        @ApiOperation(value = "유저 정보 보기", notes = "유저 정보를 확인하였습니다.")
         @GetMapping("/user/updateForm")
         public String updateForm(Model model, @AuthenticationPrincipal PrincipalDetail principalDetail) {
             model.addAttribute("user", principalDetail.getUser());
@@ -194,6 +187,7 @@ public class UserController {
         }
 
         // 작성 글 보기
+        @ApiOperation(value = "작성 글 보기")
         @GetMapping("/user/myBoard")
         public String index(Model model, @AuthenticationPrincipal PrincipalDetail principalDetail) {
             model.addAttribute("user", principalDetail.getUser());

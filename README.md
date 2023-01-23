@@ -28,6 +28,7 @@
 - 도메인 설계에서 무한 참조 문제를 해결하기 위해 @JsonIgnoreProperties 어노테이션 적용
 - 카카오 소셜로그인 Rest API 구현(참조 : https://developers.kakao.com/docs/latest/ko/kakaologin/rest-api) 
 - 클라이언트(프론트)에게 편의를 제공하기 위해 API 명세서 작성(링크 : )
+- 실시간으로 API 문서를 자동화하고, API를 테스트 하기 위해 Swagger 사용
 - Controller의 요청에 대한 응답 화면을 보기 위해 Thymeleaf 이용
 - domain의 민감 정보들을 유출시키지 않기 위해 ResponseDto 설계
 

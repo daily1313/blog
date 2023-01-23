@@ -48,7 +48,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
         http
                 .csrf().disable() // csrf토큰 비활성화 (테스트시에 걸어두는게 좋음)
                 .authorizeRequests()
-                .antMatchers("/", "/auth/**", "/js/**", "/css/**", "/image/**")
+                .antMatchers("/", "/auth/**", "/js/**", "/css/**", "/image/**","/swagger-ui/**", "/v3/api-docs",
+                        "/swagger-resources",
+                        "/swagger-resources/**",
+                        "/configuration/ui",
+                        "/configuration/security",
+                        "/swagger-ui.html",
+                        "/webjars/**")
                 .permitAll()    // 위에 접근은 누구나 허용
                 .anyRequest()   // 위에가 아닌 모든 요청은 아래로
                 .authenticated()

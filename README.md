@@ -11,6 +11,7 @@
 - Mysql 8.0.23
 - Lombok
 - Thymeleaf
+- Swagger
 
 ### Git Convention
 - feat : 기능 추가

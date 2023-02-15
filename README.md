@@ -35,12 +35,12 @@
 
 ### 최종 결과물
 - 블로그 화면 (localhost:8080 접속시)
-<img src="../img/p1.png" width="500" height="100">
+<img src="./img/p1.png" width="500" height="100">
 - 회원가입 화면
-<img src="../img/p2.png" width="500" height="100">
+<img src="./img/p2.png" width="500" height="100">
 - 게시판 화면
-<img src="../img/p4.png" width="500" height="100">
+<img src="./img/p4.png" width="500" height="100">
 - 댓글창 화면
-<img src="../img/p5.png" width="500" height="100">
+<img src="./img/p5.png" width="500" height="100">
 - 게시글 목록 화면
-<img src="../img/p6.png" width="500" height="100">
+<img src="./img/p6.png" width="500" height="100">

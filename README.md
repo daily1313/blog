@@ -34,3 +34,13 @@
 - domain의 민감 정보들을 유출시키지 않기 위해 ResponseDto 설계
 
 ### 최종 결과물
+- 블로그 화면(localhost:8080/blog 접속시)
+  <img width="700" alt="p1" src="https://user-images.githubusercontent.com/88074556/219098287-3b153b44-7c73-4ae8-97e5-443da08dd29b.png">
+- 회원가입 화면
+  <img width="700" alt="p3" src="https://user-images.githubusercontent.com/88074556/219098219-f15b987a-7c57-4e82-948c-2292a95f056f.png">
+- 게시글 화면
+  <img width="700" alt="p4" src="https://user-images.githubusercontent.com/88074556/219098351-8177643e-e423-4b0c-affb-7861a0e977fc.png">
+- 게시글 목록 조회 화면
+  <img width="700" alt="p6" src="https://user-images.githubusercontent.com/88074556/219098396-090c8c61-f596-4729-a030-f2407cae0c91.png">
+- 댓글창 화면
+  <img width="700" alt="p5" src="https://user-images.githubusercontent.com/88074556/219098965-abbae431-e806-418f-9102-43b93dc85555.png">

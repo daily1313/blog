@@ -34,13 +34,3 @@
 - domain의 민감 정보들을 유출시키지 않기 위해 ResponseDto 설계
 
 ### 최종 결과물
-- 블로그 화면 (localhost:8080 접속시)
-<img src="/Users/kimseungbeom/Desktop/img/p1.png" width="500" height="100">
-- 회원가입 화면
-<img src="/Users/kimseungbeom/Desktop/img/p2.png" width="500" height="100">
-- 게시판 화면
-<img src="/Users/kimseungbeom/Desktop/img/p4.png" width="500" height="100">
-- 댓글창 화면
-<img src="/Users/kimseungbeom/Desktop/img/p5.png" width="500" height="100">
-- 게시글 목록 화면
-<img src="/Users/kimseungbeom/Desktop/img/p6.png" width="500" height="100">
